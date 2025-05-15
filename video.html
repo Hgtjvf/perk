@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PerkView - Videos</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="images/favicon.png" type="image/png" />
+  <style>
+    .landscape-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      margin: 40px auto;
+      max-width: 960px;
+      padding: 0 15px;
+    }
+
+    .landscape-box {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #000;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      position: relative;
+    }
+
+    .landscape-box video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    #nextButton {
+      margin-top: 10px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 6px;
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+      display: none;
+    }
+
+    #nextButton:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+
+<body>
+
+    <!----------- Header ----------->
+    <header class="header">
+        <div class="container">
+            <!-- Logo -->
+            <div class="logo">
+                <img src="images/logo.png" alt="Brand Logo" class="logo-image">
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="video.html" class="nav-link">Videos</a>
+                <a href="upload.html" class="nav-link">Upload Video</a>
+            </nav>
+
+
+
+            <!-- User Options -->
+             <script src="session.js"></script>
+            <div class="user-options">
+                <a href="sign-in.html">
+                    <button class="sign-button" id="signInButton">Sign In / Sign Up</button>
+                </a>
+                <div class="logged-in-state" id="loggedInState" style="display: none;">
+                    <!-- Wrap the text in an anchor tag -->
+                    <a href="user.html" class="welcome-link">
+                        <span class="points">Welcome, <span id="username">Username</span></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+  <!-- Video Display Area -->
+  <main>
+    <div id="contentContainer" class="landscape-container">
+      <div class="landscape-box">
+        <video id="videoPlayer" controls></video>
+      </div>
+      <button id="nextButton">Next Video</button>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-column links-column">
+                        <h3>Quick Links</h3>
+                        <ul class="quick-links">
+                            <li><a href="about-us.html">About Us</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="faqs.html">FAQs</a></li>
+                            <li><a href="privacy.html">Privacy Policy</a></li>
+                            <li><a href="terms.html">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column newsletter-column">
+                        <h3>Subscribe</h3>
+                        <p>Get updates and exclusive rewards delivered to your inbox.</p>
+                        <form id="subscribe-form" method="POST" action="subscribe.php">
+                            <input type="email" name="email" id="subscribe-email" placeholder="Enter your email" class="newsletter-input" required>
+                            <button type="submit" class="newsletter-button">Subscribe</button>
+                        </form>
+                        <p id="subscribe-message" style="margin-top: 10px; color: green; display: none;"></p>
+                    </div>
+    </div>
+    <div class="footer-divider"></div>
+    <p class="footer-text">&copy; <span id="year"></span> PerkView. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const videoPlayer = document.getElementById("videoPlayer");
+    const nextButton = document.getElementById("nextButton");
+
+    // Function to fetch and load a random video
+    async function loadRandomVideo() {
+      nextButton.style.display = "none";
+      videoPlayer.src = "";
+      videoPlayer.load();
+
+      try {
+        const res = await fetch("get_next_video.php"); // Your PHP endpoint that returns a random video JSON
+        if (!res.ok) throw new Error("Network response was not ok");
+
+        const data = await res.json();
+
+        if (data && data.file_path) {
+          videoPlayer.src = data.file_path;
+          videoPlayer.load();
+          videoPlayer.play();
+        } else {
+          videoPlayer.poster = ""; // or some placeholder image
+          alert("No video found.");
+        }
+      } catch (error) {
+        alert("Error loading video: " + error.message);
+      }
+    }
+
+    // Show next button when video ends
+    videoPlayer.addEventListener("ended", () => {
+      nextButton.style.display = "block";
+    });
+
+    // Load next video on button click
+    nextButton.addEventListener("click", () => {
+      loadRandomVideo();
+    });
+
+    // Initial video load
+    loadRandomVideo();
+
+    const video = document.getElementById('videoPlayer');
+let lastAllowedTime = 0;
+
+// Update last allowed time regularly, but only when not seeking
+video.addEventListener('timeupdate', () => {
+  if (!video.seeking) {
+    lastAllowedTime = video.currentTime;
+  }
+});
+
+// Prevent seeking by resetting currentTime to lastAllowedTime
+video.addEventListener('seeking', () => {
+  // If user tries to seek away from lastAllowedTime, reset it
+  if (Math.abs(video.currentTime - lastAllowedTime) > 0.01) {
+    video.currentTime = lastAllowedTime;
+  }
+});
+
+  </script>
+</body>
+
+</html>

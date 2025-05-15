@@ -1,0 +1,2160 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    color: #333333;
+    background-color: #F5F5F5;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Container Utility */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    position: sticky; /* Make the header sticky */
+    top: 0;
+    z-index: 1000; /* Ensure it's above the rest of the content */
+    background-color: rgba(173, 216, 230, 0.8); /* Semi-transparent Light Blue */
+    color: #333333; /* Dark Gray for header text */
+    padding: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle box shadow */
+    backdrop-filter: blur(5px); /* Optional: subtle blur effect for background */
+}
+
+.logo-image {
+    width: 60px;
+    height: 60px;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-link {
+    color: #333333;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-link:hover {
+    background-color: #40E0D0; /* Turquoise for hover effect */
+    color: #FFFFFF;
+}
+
+/* Active state for the navigation links */
+.nav-link.active {
+    background-color: #90EE90; /* Soft Green for active link */
+    color: #333333;
+}
+
+/* Search & User */
+.search-bar {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.search-input {
+    padding: 10px;
+    font-size: 16px;
+    width: 200px;
+    border: 2px solid #90EE90; /* Soft Green border */
+    border-radius: 5px;
+}
+
+.search-button {
+    padding: 10px 15px;
+    background: #90EE90; /* Soft Green */
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-button:hover {
+    background: #76c7c0; /* Darker Soft Green on hover */
+}
+
+/* Sign In Button */
+.sign-button {
+    padding: 12px 24px;
+    font-size: 16px;
+    background-color: #40E0D0; /* Turquoise */
+    color: #FFFFFF; /* White text */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    text-align: center;
+}
+
+.sign-button:hover {
+    background-color: #20B2AA; /* Darker Turquoise on hover */
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+.sign-button:active {
+    background-color: #2E8B57; /* Even darker Turquoise on click */
+    transform: scale(1); /* Reset scale on click */
+}
+
+
+/* Hero Section */
+.hero {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ADD8E6; /* Light Blue for calming effect */
+    color: #333333;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.hero-subtitle {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.cta-button {
+    padding: 15px 30px;
+    background-color: #FFDAB9; /* Peach background */
+    color: #333333;
+    font-size: 18px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #FFD700; /* Golden Peach on hover */
+}
+
+/* Video Section */
+#video-sections {
+    padding: 50px 20px;
+}
+
+.section {
+    margin-bottom: 40px;
+}
+
+h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333333;
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.video-thumbnail {
+    position: relative;
+}
+
+.video-thumbnail img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.video-thumbnail .info {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    border-radius: 5px;
+    color: #FFFFFF;
+}
+
+.watch-btn {
+    background-color: #40E0D0; /* Turquoise button */
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.watch-btn:hover {
+    background-color: #20B2AA; /* Darker Turquoise */
+}
+
+
+/* Gamification */
+
+/* General Section Styling */
+.section {
+    background-color: #F5F5F5;
+    padding: 40px 0;
+}
+
+.topic {
+    color: #333333;
+}
+
+.section-title, .section-subtitle {
+    color: #333333;
+    text-align: center;
+}
+
+.reward-description, .reward-points {
+    color: #555555;
+}
+
+/* Daily Rewards Styling */
+.daily-rewards {
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.progress-bar {
+    background-color: #DDDDDD;
+    border-radius: 5px;
+}
+
+.progress {
+    height: 20px;
+    border-radius: 5px;
+    background-color: #90EE90; /* Soft Green */
+}
+
+.claim-btn {
+    background-color: #FFDAB9; /* Peach */
+    color: #333333;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px 0;
+    display: block; /* Makes the button a block-level element */
+    margin: 0 auto; /* Centers horizontally */
+    padding-top: 10px;
+    margin-top: 20px; /* Adjust the value to move it lower */
+}
+
+.start-challenge , .track-progress {
+    background-color: #FFDAB9; /* Peach */
+    display: block; /* Makes the button a block-level element */
+    margin: 0 auto; /* Centers horizontally */
+    padding-top: 10px;
+    margin-top: 20px; /* Adjust the value to move it lower */
+}
+
+.start-challenge:hover {
+    background-color: #ADD8E6; /* Light Blue */
+}
+
+.track-progress:hover {
+    background-color: #ADD8E6; /* Light Blue */
+}
+
+.claim-btn:hover {
+    background-color: #ADD8E6; /* Light Blue */
+}
+
+/* Challenges or Contests Styling (Same as Daily Rewards) */
+.challenges-contests {
+    margin-top: 40px;
+}
+
+.challenge-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.challenge-card {
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 1500px;
+}
+
+.challenge-task {
+    color: #333333;
+}
+
+.progress-bar-container {
+    margin-top: 10px;
+}
+
+.progress-bar {
+    background-color: #DDDDDD;
+    border-radius: 5px;
+}
+
+.progress {
+    height: 20px;
+    border-radius: 5px;
+    background-color: #40E0D0; /* Turquoise */
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .challenge-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+
+/* Footer */
+
+/* General Footer Styling */
+.footer {
+    background-color: #ADD8E6; /* Light Blue */
+    color: #333333;
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Vertically centers the content */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers content vertically within each column */
+    padding: 20px;
+}
+
+.footer-divider {
+    height: 1px;
+    background-color: #40E0D0; /* Turquoise */
+    margin: 20px 0;
+    width: 80%;
+    margin: 20px auto;
+}
+
+.footer-text {
+    font-size: 14px;
+    color: #555555; /* Medium Gray */
+    text-align: center;
+}
+
+/* Quick Links Styling */
+.links-column h3 {
+    color: #333333; /* Dark Gray */
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.quick-links {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.quick-links li {
+    margin-bottom: 10px;
+}
+
+.quick-links a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.quick-links a:hover {
+    color: #40E0D0; /* Turquoise */
+}
+
+/* Newsletter Signup Styling */
+.newsletter-column h3 {
+    color: #333333; /* Dark Gray */
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.newsletter-column p {
+    color: #555555; /* Medium Gray */
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.newsletter-input {
+    padding: 10px;
+    border: 1px solid #40E0D0; /* Turquoise */
+    border-radius: 5px;
+    width: calc(100% - 22px);
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.newsletter-button {
+    padding: 10px 20px;
+    background-color: #40E0D0; /* Turquoise */
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 auto; /* Centers the button horizontally */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.newsletter-button:hover {
+    background-color: #90EE90; /* Soft Green */
+    color: #333333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.privacy-intro-privacy {
+  padding-top: 20px;
+
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .newsletter-button {
+        margin: 0 auto;
+    }
+}
+
+
+
+/* Container Utility */
+.container-about {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+  
+  /* Vertical Section Spacing */
+  section-about {
+    margin-bottom: 2rem;
+  }
+  
+  /* Introduction */
+  .introduction-section-about {
+    background: linear-gradient(135deg, #ADD8E6, #40E0D0);
+    text-align: center;
+    padding: 3rem 0;
+  }
+  .platform-name-about {
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 1rem;
+  }
+  .platform-tagline-about {
+    font-size: 1.25rem;
+    color: #F0F8FF;
+    margin-bottom: 1.5rem;
+  }
+  .platform-description-about {
+    font-size: 1rem;
+    color: #F0F8FF;
+  }
+  
+  /* Mission & Vision & Features & Values & CTAs */
+  .mission-section-about,
+  .vision-section-about,
+  .features-section-about,
+  .cta-section-about,
+  .values-section-about {
+    background: #fff;
+    padding: 2rem 0;
+  }
+  
+  /* Headings */
+  .mission-heading-about,
+  .vision-heading-about,
+  .values-heading-about,
+  .cta-heading-about {
+    font-size: 1.75rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+  
+  /* Text */
+  .mission-text-about,
+  .vision-text-about {
+    font-size: 1rem;
+    text-align: center;
+    color: #555;
+  }
+  
+  /* Features: vertical flow */
+  .features-container-about {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+  }
+  .feature-item-about {
+    background: #F5F5F5;
+    padding: 1rem;
+    border-radius: 0.5rem;
+  }
+  .feature-icon-about i {
+    font-size: 1.5rem;
+    color: #40E0D0;
+    display: block;
+    text-align: center;
+    margin-bottom: 0.75rem;
+  }
+  .feature-title-about {
+    font-size: 1.25rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    color: #333;
+  }
+  .feature-description-about {
+    font-size: 1rem;
+    text-align: center;
+    color: #555;
+  }
+  
+  /* CTA Buttons */
+  .cta-container-about,
+  .cta-button-container-about {
+    text-align: center;
+    margin-top: 1.5rem;
+  }
+  .cta-button-about {
+    background: #FFDAB9;
+    color: #333;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  /* Secondary CTA Background */
+  .cta-section-about {
+    background: linear-gradient(135deg, #ADD8E6, #90EE90);
+    color: #fff;
+  }
+  .cta-heading-about {
+    padding: 1rem 0;
+  }
+  
+  /* Values: vertical flow */
+  .values-list-about {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+  }
+  .value-item-about {
+    background: #F5F5F5;
+    padding: 1rem;
+    border-radius: 0.5rem;
+  }
+  .value-icon-about i {
+    font-size: 1.5rem;
+    color: #40E0D0;
+    display: block;
+    text-align: center;
+    margin-bottom: 0.75rem;
+  }
+  .value-title-about {
+    font-size: 1.25rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    color: #333;
+  }
+  .value-text-about {
+    font-size: 1rem;
+    text-align: center;
+    color: #555;
+  }
+  
+  /* Responsive */
+  @media (max-width: 600px) {
+    .platform-name-about { font-size: 2rem; }
+    .feature-item-about,
+    .value-item-about { padding: 0.75rem; }
+    section { margin-bottom: 1.5rem; }
+  }
+  
+
+  /*=====================================
+  CONTACT PAGE CSS
+=====================================*/
+
+/* Container Utility */
+.container-contact {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1.5rem;
+  }
+  
+  /* Vertical Section Spacing */
+  section.contact-intro-section-contact,
+  section.contact-form-section-contact {
+    background-color: #FFFFFF;
+    margin: 2rem 0;
+    padding: 2rem 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+  
+  /* Contact Intro */
+  .contact-heading-contact {
+    font-size: 2rem;
+    color: #333333;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .contact-text-contact {
+    font-size: 1rem;
+    color: #555555;
+    text-align: center;
+    line-height: 1.6;
+  }
+  
+  /* Contact Form */
+  .contact-form-about {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .contact-form-label-contact {
+    font-size: 1rem;
+    color: #333333;
+    margin-bottom: 0.5rem;
+  }
+  .contact-form-input-contact,
+  .contact-form-select-contact,
+  .contact-form-textarea-contact,
+  .contact-form-file-contact {
+    font-size: 1rem;
+    padding: 0.75rem;
+    border: 1px solid #ADD8E6;
+    border-radius: 0.3125rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .contact-form-textarea-contact {
+    min-height: 150px;
+    resize: vertical;
+  }
+  
+  /* Submit Button */
+  .contact-form-submit-contact {
+    background-color: #40E0D0;
+    color: #FFFFFF;
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 0.3125rem;
+    cursor: pointer;
+    align-self: flex-start;
+    transition: background-color 0.3s;
+  }
+  .contact-form-submit-contact:hover,
+  .contact-form-submit-contact:focus {
+    background-color: #2DB7B3;
+    outline: none;
+  }
+  
+  /* Response Note Section */
+  .response-note-contact {
+    background-color: #F5F5F5;
+    text-align: center;
+    padding: 1.25rem;
+    margin-top: 2rem;
+    border-radius: 0.5rem;
+  }
+  .response-note-contact p {
+    font-size: 1.125rem;
+    color: #333333;
+    margin: 0;
+  }
+  
+  /* Responsive */
+  @media (max-width: 600px) {
+    .contact-heading-contact { font-size: 1.75rem; }
+    .contact-form-input-contact,
+    .contact-form-select-contact,
+    .contact-form-textarea-contact,
+    .contact-form-file-contact { font-size: 0.9rem; }
+  }
+
+  
+
+/*=====================================
+  FAQ Section CSS
+=====================================*/
+
+/* Container Utility */
+.container-faq {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+  
+  /* FAQ Section Styling */
+  .faq-section-faq {
+    background-color: #F5F5F5; /* Soft Gray */
+    padding: 2rem 0;
+    text-align: center;
+  }
+  .faq-header-faq {
+    font-size: 2rem;
+    color: #333333; /* Dark Gray */
+    margin-bottom: 1rem;
+  }
+  .faq-introduction-faq {
+    font-size: 1rem;
+    color: #555555; /* Medium Gray */
+    margin: 0 auto 2rem;
+    max-width: 600px;
+    line-height: 1.6;
+  }
+  
+  /* FAQ Items */
+  .faq-items-faq {
+    background-color: #FFFFFF; /* White */
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .faq-category-faq {
+    margin-bottom: 2rem;
+  }
+  .faq-category-header-faq {
+    font-size: 1.25rem;
+    color: #40E0D0; /* Turquoise */
+    margin-bottom: 1rem;
+  }
+  .faq-item-faq {
+    margin-bottom: 1rem;
+  }
+  .faq-question-faq {
+    display: block;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333333; /* Dark Gray */
+    margin-bottom: 0.5rem;
+  }
+  .faq-answer-faq {
+    font-size: 1rem;
+    color: #555555; /* Medium Gray */
+    line-height: 1.6;
+    margin: 0;
+  }
+  
+  /* Not Found Message */
+  .faq-not-found-faq {
+    background-color: #FFDAB9; /* Peach */
+    padding: 1rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .faq-not-found-text-faq {
+    font-size: 1rem;
+    color: #333333; /* Dark Gray */
+    margin: 0;
+  }
+  
+  /* CTA Section */
+  .cta-section-faq {
+    background-color: #ADD8E6; /* Light Blue */
+    padding: 1.5rem 0;
+    text-align: center;
+    border-radius: 0.5rem;
+  }
+  .cta-message-faq {
+    font-size: 1rem;
+    color: #333333; /* Dark Gray */
+    margin: 0;
+  }
+  .cta-link-faq {
+    color: #40E0D0; /* Turquoise */
+    font-weight: bold;
+    text-decoration: none;
+  }
+  .cta-link-faq:hover,
+  .cta-link-faq:focus {
+    text-decoration: underline;
+    outline: none;
+  }
+  
+  /* Responsive */
+  @media (max-width: 600px) {
+    .faq-header-faq { font-size: 1.5rem; }
+    .faq-category-header-faq { font-size: 1.1rem; }
+    .faq-question-faq,
+    .faq-answer-faq,
+    .cta-message-faq { font-size: 0.9rem; }
+  }
+
+  
+  /* General Styling for the Privacy Policy Page */
+.privacy-policy-intro {
+    text-align: center;
+    padding: 20px;
+    background-color: #f5f5f5;
+    color: #333333;
+    border-radius: 12px;
+    margin-bottom: 30px;
+}
+
+.privacy-policy-header {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #40e0d0;
+}
+
+.privacy-policy-text {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #555555;
+}
+
+/* Section Titles */
+.information-header-privacy, .section-title-privacy {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #90ee90;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Subsections */
+.subsection-title-privacy {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #add8e6;
+}
+
+.subsection-text-privacy {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333333;
+    margin-bottom: 20px;
+}
+
+/* Data Security Section */
+.data-security-privacy {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+}
+
+/* Data Retention Section */
+.data-retention-privacy {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Your Rights Section */
+#your-rights-privacy {
+    background-color: #f5f5f5;
+    padding: 30px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Subsections within Sections */
+.subsection-privacy {
+    margin-bottom: 20px;
+}
+
+/* Links Styling */
+.contact-link {
+    color: #40e0d0;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-link:hover {
+    text-decoration: underline;
+}
+
+/* Contact Information Section */
+.contact-information-privacy {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.contact-information-privacy p {
+    font-size: 1rem;
+    color: #555555;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .privacy-policy-header, .information-header-privacy, .section-title-privacy {
+        font-size: 1.5rem;
+    }
+
+    .subsection-title-privacy {
+        font-size: 1.1rem;
+    }
+
+    .privacy-policy-text, .subsection-text-privacy {
+        font-size: 0.9rem;
+    }
+}
+
+/* General Styling for the Sign-In Page */
+.welcome-section-signin {
+    background-color: #f5f5f5;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.welcome-container-signin {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.welcome-tagline-signin {
+    font-size: 1.8rem;
+    color: #333333;
+    font-weight: bold;
+}
+
+/* Sign-In Section Styling */
+.sign-in-section-signin {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 0 auto 30px auto;
+}
+
+.sign-in-container-signin {
+    padding: 15px;
+}
+
+.sign-in-title-signin {
+    font-size: 1.5rem;
+    color: #90ee90;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group-signin {
+    margin-bottom: 15px;
+}
+
+.form-label-signin {
+    font-size: 1rem;
+    color: #555555;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-input-signin {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #add8e6;
+    border-radius: 6px;
+}
+
+.password-container-signin {
+    position: relative;
+}
+
+.eye-icon-signin {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #333333;
+}
+
+.remember-me-signin {
+    display: flex;
+    align-items: center;
+}
+
+.remember-me-label-signin {
+    margin-left: 5px;
+    font-size: 0.9rem;
+    color: #555555;
+}
+
+.sign-in-button-signin {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    background-color: #40e0d0;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.sign-in-button-signin:hover {
+    background-color: #36c2b2;
+}
+
+/* Error Messages */
+.error-message-signin {
+    color: red;
+    font-size: 0.85rem;
+    margin-top: 5px;
+    display: block;
+}
+
+/* Additional Links Section */
+.additional-links-section-signin {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.additional-links-container-signin {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.link-group-signin {
+    margin: 0;
+}
+
+.additional-link-signin {
+    color: #40e0d0;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.additional-link-signin:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .welcome-tagline-signin {
+        font-size: 1.5rem;
+    }
+
+    .sign-in-section-signin {
+        width: 90%;
+    }
+
+    .sign-in-title-signin {
+        font-size: 1.25rem;
+    }
+}
+
+/* General Styling */
+.container-signup {
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-top: 40px;
+}
+
+.title-signup {
+    font-size: 2rem;
+    color: #40e0d0;
+    margin-bottom: 20px;
+}
+
+/* Form Fields */
+.form-group-signup {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group-signup label {
+    font-size: 1rem;
+    color: #333333;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.form-group-signup input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.form-group-signup input:focus {
+    border-color: #40e0d0;
+    outline: none;
+    box-shadow: 0 0 5px rgba(64, 224, 208, 0.5);
+}
+
+.form-group-signup small {
+    font-size: 0.9rem;
+    color: #555555;
+}
+
+/* Checkbox Group */
+.checkbox-group-signup {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.checkbox-group-signup input {
+    margin-right: 10px;
+}
+
+.checkbox-group-signup label {
+    font-size: 0.9rem;
+    color: #555555;
+}
+
+/* Submit Button */
+.button-signup {
+    width: 100%;
+    padding: 10px;
+    background-color: #40e0d0;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-signup:hover {
+    background-color: #2ab3ad;
+}
+
+/* Why Sign Up Section */
+.why-signup {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.why-title-signup {
+    font-size: 1.8rem;
+    color: #40e0d0;
+    margin-bottom: 20px;
+}
+
+.benefit-items-signup {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.benefit-item-signup {
+    flex: 1 1 calc(33% - 20px);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.benefit-item-signup:hover {
+    transform: translateY(-5px);
+}
+
+.benefit-item-signup i {
+    font-size: 2rem;
+    color: #40e0d0;
+    margin-bottom: 10px;
+}
+
+.benefit-item-signup h3 {
+    font-size: 1.2rem;
+    color: #333333;
+    margin-bottom: 10px;
+}
+
+.benefit-item-signup p {
+    font-size: 0.9rem;
+    color: #555555;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .benefit-item-signup {
+        flex: 1 1 100%;
+    }
+
+    .title-signup, .why-title-signup {
+        font-size: 1.5rem;
+    }
+
+    .form-group-signup label, .checkbox-group-signup label {
+        font-size: 0.9rem;
+    }
+
+    .button-signup {
+        font-size: 0.9rem;
+    }
+}
+
+
+/* General Styling for Terms of Service Page */
+.intro-terms {
+    text-align: center;
+    padding: 20px;
+    background-color: #f5f5f5;
+    color: #333333;
+    border-radius: 12px;
+    margin-bottom: 30px;
+}
+
+.headline-terms {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #40e0d0;
+}
+
+.intro-text-terms {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #555555;
+}
+
+/* Section Titles */
+.title-terms {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #90ee90;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Section Content */
+.text-terms {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333333;
+    margin-bottom: 20px;
+}
+
+/* User Conduct List */
+.list-terms {
+    list-style-type: disc;
+    margin-left: 20px;
+    color: #555555;
+}
+
+.list-terms li {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Links Styling */
+.link-terms {
+    color: #40e0d0;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.link-terms:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .headline-terms, .title-terms {
+        font-size: 1.5rem;
+    }
+
+    .intro-text-terms, .text-terms {
+        font-size: 0.9rem;
+    }
+}
+
+
+.container-upload {
+    width: 80%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.title-upload {
+    font-size: 2rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Form Section */
+.form-section-upload {
+    margin-bottom: 20px;
+}
+
+.form-section-upload label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.form-section-upload input,
+.form-section-upload textarea,
+.form-section-upload select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.form-section-upload input[type="file"] {
+    padding: 5px;
+}
+
+.form-section-upload .info-text-upload {
+    font-size: 0.875rem;
+    color: #555;
+}
+
+/* Privacy Settings */
+.privacy-settings-upload {
+    margin-bottom: 20px;
+}
+
+.privacy-settings-upload label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.privacy-settings-upload input[type="radio"] {
+    margin-right: 10px;
+}
+
+.form-section-upload #custom-visibility-upload {
+    margin-top: 10px;
+}
+
+.submit-upload {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #40E0D0;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.submit-upload:hover {
+    background-color: #33b6b0;
+}
+
+/* Progress Bar */
+.upload-progress-upload {
+    margin-top: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.uploading-text-upload {
+    font-size: 1.125rem;
+    margin-bottom: 10px;
+}
+
+.progress-bar-upload {
+    width: 100%;
+    height: 20px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress-fill-upload {
+    width: 0;
+    height: 100%;
+    background-color: #40E0D0;
+    transition: width 0.5s ease-in-out;
+}
+
+/* Completion Modal */
+.completion-modal-upload {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content-upload {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+}
+
+.modal-title-upload {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.modal-message-upload {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.continue-button-upload {
+    padding: 10px 20px;
+    background-color: #40E0D0;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.continue-button-upload:hover {
+    background-color: #33b6b0;
+}
+
+
+/* Add this to your style.css to create the line between password field and button */
+.line-separator {
+    border-top: 1px solid #ddd;
+    margin: 10px 0;
+}
+
+
+
+/* Style the anchor inside the logged-in state */
+.logged-in-state a {
+    text-decoration: none;  /* Remove underline */
+    color: #333333;         /* Set text color */
+    font-weight: bold;      /* Make the text bold */
+}
+
+/* Optional: Style the username text to differentiate it */
+.logged-in-state #username {
+    color: #40E0D0;  /* Add a different color for the username */
+}
+
+
+.container-userpage {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #F5F5F5;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.heading-userpage {
+  text-align: center;
+  color: #007BFF;
+}
+
+.profile-item-userpage {
+  margin: 15px 0;
+  font-size: 16px;
+}
+
+.label-userpage {
+  font-weight: bold;
+}
+
+.status-active-userpage {
+  color: #28A745;
+}
+
+.status-suspended-userpage {
+  color: #FF4500;
+}
+
+.status-banned-userpage {
+  color: #FF4500;
+}
+
+.points-balance-userpage {
+  color: #FFC107;
+}
+
+.button-userpage {
+  display: inline-block;
+  background-color: #007BFF;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.button-userpage:hover {
+  background-color: #0056b3;
+}
+
+.error-userpage {
+  color: #FF4500;
+  font-weight: bold;
+}
+
+.divider-userpage {
+  border-bottom: 1px solid #ddd;
+  margin: 20px 0;
+}
+
+
+.activity-feed-userpage {
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #F5F5F5;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.heading-userpage {
+  text-align: center;
+  color: #007BFF;
+}
+
+.section-title-userpage {
+  font-size: 18px;
+  margin-top: 20px;
+  color: #007BFF;
+}
+
+.videos-watched-userpage,
+.videos-uploaded-userpage {
+  margin-top: 20px;
+}
+
+.video-item-userpage,
+.video-upload-item-userpage {
+  display: flex;
+  margin-bottom: 15px;
+  background-color: #FFFFFF;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.thumbnail-userpage {
+  width: 120px;
+  height: 90px;
+  margin-right: 20px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.video-details-userpage {
+  display: flex;
+  flex-direction: column;
+}
+
+.video-title-userpage {
+  font-size: 16px;
+  color: #007BFF;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.video-title-userpage:hover {
+  text-decoration: underline;
+}
+
+.watch-duration-userpage {
+  font-size: 14px;
+  color: #555555;
+}
+
+.video-stats-userpage {
+  margin-top: 10px;
+}
+
+.views-userpage,
+.likes-userpage,
+.comments-userpage {
+  margin-right: 15px;
+  font-size: 14px;
+  color: #555555;
+}
+
+.views-userpage {
+  color: #28A745;
+}
+
+.likes-userpage {
+  color: #FFC107;
+}
+
+.comments-userpage {
+  color: #FF4500;
+}
+
+.no-activity-userpage {
+  color: #FF4500;
+  font-weight: bold;
+  text-align: center;
+}
+
+.no-activity-userpage::before {
+  content: "🚫 ";
+}
+
+
+.wallet-overview-userpage {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #F5F5F5;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.heading-userpage {
+  text-align: center;
+  color: #007BFF;
+}
+
+.section-title-userpage {
+  font-size: 18px;
+  margin-top: 20px;
+  color: #007BFF;
+}
+
+.current-balance-wallet,
+.points-conversion-wallet,
+.transaction-history-wallet {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.balance-details-wallet {
+  font-size: 16px;
+  color: #333333;
+}
+
+.points-wallet {
+  font-weight: bold;
+  color: #FFC107;
+}
+
+.cash-wallet {
+  font-weight: bold;
+  color: #28A745;
+  margin-left: 20px;
+}
+
+.points-conversion-wallet {
+  font-size: 14px;
+  color: #555555;
+  margin-top: 10px;
+}
+
+.transaction-history-wallet {
+  margin-top: 20px;
+}
+
+.transaction-item-wallet {
+  padding: 10px;
+  margin-bottom: 15px;
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.transaction-date-wallet {
+  font-size: 14px;
+  color: #777777;
+}
+
+.transaction-status-wallet {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.transaction-success-wallet {
+  color: #28A745;
+}
+
+.transaction-fail-wallet {
+  color: #FF4500;
+}
+
+.no-transaction-wallet {
+  color: #FF4500;
+  font-weight: bold;
+  text-align: center;
+}
+
+.no-transaction-wallet::before {
+  content: "🚫 ";
+}
+
+
+
+
+.transaction-history-wallet {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #F5F5F5;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.heading-userpage {
+  text-align: center;
+  color: #007BFF;
+}
+
+.section-title-userpage {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #007BFF;
+}
+
+.credits-earned-wallet {
+  margin-top: 20px;
+}
+
+.credit-item-wallet {
+  padding: 15px;
+  margin-bottom: 10px;
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  border-left: 5px solid #28A745;
+}
+
+.credit-item-wallet:nth-child(even) {
+  background-color: #F5F5F5;
+}
+
+.transaction-details-wallet {
+  font-size: 16px;
+  color: #333333;
+}
+
+.transaction-date-wallet {
+  font-size: 14px;
+  color: #777777;
+}
+
+.no-transaction-wallet {
+  text-align: center;
+  color: #FF4500;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.no-transaction-wallet::before {
+  content: "🚫 ";
+}
+
+
+
+
+.wallet-section {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #F5F5F5;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.heading-userpage {
+  text-align: center;
+  color: #007BFF;
+}
+
+.section-title-userpage {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #007BFF;
+}
+
+.input-wallet {
+  width: 100%;
+  padding: 8px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #FFFFFF;
+}
+
+.deposit-button-wallet,
+.withdraw-button-wallet {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #007BFF;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.deposit-button-wallet:hover,
+.withdraw-button-wallet:hover {
+  background-color: #0056b3;
+}
+
+.withdrawal-item-wallet {
+  padding: 15px;
+  margin-bottom: 10px;
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  border-left: 5px solid #28A745;
+}
+
+.withdrawal-item-wallet:nth-child(even) {
+  background-color: #F5F5F5;
+}
+
+.withdrawal-amount-wallet {
+  font-size: 16px;
+  color: #333333;
+}
+
+.withdrawal-date-wallet {
+  font-size: 14px;
+  color: #777777;
+}
+
+.withdrawal-status-wallet {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.status-completed-wallet {
+  color: #28A745;
+}
+
+.status-pending-wallet {
+  color: #FFC107;
+}
+
+.no-withdrawal-wallet {
+  text-align: center;
+  color: #FF4500;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.no-withdrawal-wallet::before {
+  content: "🚫 ";
+}
+
+
+
+
+.video-interface-video {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.video-display-video {
+  width: 100%;
+  height: 70%;
+  position: relative;
+  background-color: #F5F5F5;
+}
+
+.current-video-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.rewards-badge-video {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #28A745;
+  color: #FFFFFF;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.video-details-overlay-video {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+.video-title-video {
+  font-size: 18px;
+  font-weight: bold;
+  color: #007BFF;
+}
+
+.points-earned-video {
+  font-size: 14px;
+  color: #FFC107;
+}
+
+.action-buttons-video {
+  position: absolute;
+  bottom: 5%;
+  display: flex;
+  justify-content: space-around;
+  width: 90%;
+}
+
+.swipe-navigation-video {
+  background-color: #007BFF;
+  color: #FFFFFF;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.pause-play-button-video {
+  background-color: #333333;
+  color: #FFFFFF;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.report-button-video {
+  background-color: #FF4500;
+  color: #FFFFFF;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.related-videos-video {
+  width: 100%;
+  padding: 15px;
+  background-color: #F5F5F5;
+}
+
+.related-videos-video h3 {
+  font-size: 18px;
+  color: #007BFF;
+  margin-bottom: 10px;
+}
+
+.related-video-item-video {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.related-video-item-video img {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.related-video-item-video p {
+  font-size: 14px;
+  color: #333333;
+}
+
+ /* Container is clickable */
+  #clickable-div-main {
+    cursor: pointer;
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 12px;
+    background-color: #fff;
+    box-shadow: 0 0 6px rgba(0,0,0,0.1);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  /* Hover shadow */
+  #clickable-div-main.hover-shadow-main:hover {
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  }
+
+  /* Hover scale */
+  #clickable-div-main.hover-scale-main:hover {
+    transform: scale(1.05);
+  }
+
+  /* Title styling */
+  #title-main {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #222;
+    margin: 0;
+  }
+
+  /* Description styling */
+  #description-main {
+    font-size: 1rem;
+    color: #555;
+    margin: 0;
+  }
+
+  /* CTA Button */
+  #cta-button-main {
+    background-color: #0066ff;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    align-self: stretch;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+
+  #cta-button-main:hover {
+    background-color: #0052cc;
+  }
+
+  /* Responsive for small devices */
+  @media (max-width: 480px) {
+    #clickable-div-main {
+      max-width: 95%;
+      padding: 16px;
+      gap: 8px;
+    }
+
+    #title-main {
+      font-size: 1.3rem;
+    }
+
+    #description-main {
+      font-size: 0.9rem;
+    }
+
+    #cta-button-main {
+      padding: 10px;
+      font-size: 0.9rem;
+    }
+  }
+
+  .btn-wallet {
+  background-color: #007bff; /* nice blue */
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: 15px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.btn-wallet:hover {
+  background-color: #0056b3; /* darker blue on hover */
+}

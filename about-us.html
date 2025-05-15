@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PerkView</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/favicon.png" type="image/png">
+</head>
+
+<body>
+
+
+    <!----------- Header ----------->
+    <header class="header">
+        <div class="container">
+            <!-- Logo -->
+            <div class="logo">
+                <img src="images/logo.png" alt="Brand Logo" class="logo-image">
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="video.html" class="nav-link">Videos</a>
+                <a href="upload.html" class="nav-link">Upload Video</a>
+            </nav>
+
+
+
+            <!-- User Options -->
+             <script src="session.js"></script>
+            <div class="user-options">
+                <a href="sign-in.html">
+                    <button class="sign-button" id="signInButton">Sign In / Sign Up</button>
+                </a>
+                <div class="logged-in-state" id="loggedInState" style="display: none;">
+                    <!-- Wrap the text in an anchor tag -->
+                    <a href="user.html" class="welcome-link">
+                        <span class="points">Welcome, <span id="username">Username</span></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <main id="main-content">
+        <!-- Introduction Section -->
+        <section class="section-about introduction-section-about">
+          <div class="container-about introduction-content-about">
+            <h1 class="platform-name-about">Welcome to PerkView</h1>
+            <h2 class="platform-tagline-about">Watch, Earn, and Enjoy!</h2>
+            <p class="platform-description-about">
+              PerkView is a unique video-sharing platform where your time is valued. Watch videos, engage with content, and earn exciting rewards.
+            </p>
+          </div>
+        </section>
+    
+        <!-- Mission Section -->
+        <section class="section-about mission-section-about">
+          <div class="container-about mission-container-about">
+            <h2 class="mission-heading-about">Our Mission</h2>
+            <p class="mission-text-about">
+              Our mission is to create a community-driven platform that rewards users for their engagement while offering top-notch entertainment and educational content.
+            </p>
+          </div>
+        </section>
+    
+        <!-- Vision Section -->
+        <section class="section-about vision-section-about">
+          <div class="container-about vision-container-about">
+            <h2 class="vision-heading-about">Our Vision</h2>
+            <p class="vision-text-about">
+              We envision a world where content consumption is as rewarding for viewers as it is for creators.
+            </p>
+          </div>
+        </section>
+    
+        <!-- Features Section -->
+        <section class="section-about features-section-about">
+          <div class="container-about features-container-about">
+            <div class="feature-item-about">
+              <div class="feature-icon-about"><i class="fa fa-gift" aria-hidden="true"></i></div>
+              <h3 class="feature-title-about">Reward System</h3>
+              <p class="feature-description-about">
+                Earn points for watching videos and interacting with content.
+              </p>
+            </div>
+            <div class="feature-item-about">
+              <div class="feature-icon-about"><i class="fa fa-trophy" aria-hidden="true"></i></div>
+              <h3 class="feature-title-about">User-Centric Gamification</h3>
+              <p class="feature-description-about">
+                Engage in challenges, top the leaderboard, and win exclusive prizes.
+              </p>
+            </div>
+            <div class="feature-item-about">
+              <div class="feature-icon-about"><i class="fa fa-users" aria-hidden="true"></i></div>
+              <h3 class="feature-title-about">Community-Driven Content</h3>
+              <p class="feature-description-about">
+                Creators and viewers thrive together.
+              </p>
+            </div>
+          </div>
+          <div class="container-about cta-container-about">
+            <a href="video.html">
+            <button class="cta-button-about" aria-label="Start Exploring PerkView">Start Exploring</button>
+            </a>
+          </div>
+        </section>
+    
+        <!-- Secondary CTA Section -->
+        <section class="section-about cta-section-about">
+          <div class="container-about cta-content-about">
+            <h2 class="cta-heading-about">
+              Be a part of the future of video entertainment. Sign up today and start earning!
+            </h2>
+            <div class="cta-button-container-about">
+              <a href="sign-up.html">
+              <button class="cta-button-about" aria-label="Join PerkView">Join Now</button>
+              </a>
+            </div>
+          </div>
+        </section>
+    
+        <!-- Values Section -->
+        <section class="section-about values-section-about">
+          <div class="container-about">
+            <h2 class="values-heading-about">Our Core Values</h2>
+            <div class="values-list-about">
+              <div class="value-item-about">
+                <div class="value-icon-about"><i class="fas fa-lightbulb" aria-hidden="true"></i></div>
+                <h3 class="value-title-about">Innovation</h3>
+                <p class="value-text-about">Constantly improving to enhance user experience.</p>
+              </div>
+              <div class="value-item-about">
+                <div class="value-icon-about"><i class="fas fa-users" aria-hidden="true"></i></div>
+                <h3 class="value-title-about">Community</h3>
+                <p class="value-text-about">Building a positive and engaging environment.</p>
+              </div>
+              <div class="value-item-about">
+                <div class="value-icon-about"><i class="fas fa-gavel" aria-hidden="true"></i></div>
+                <h3 class="value-title-about">Integrity</h3>
+                <p class="value-text-about">Transparent and fair reward systems.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    
+    </body>
+    </html>
+    
+
+
+            <!------------- Footer ------------->
+            <footer class="footer">
+                <div class="footer-container">
+                    <!-- Quick Links -->
+                    <div class="footer-column links-column">
+                        <h3>Quick Links</h3>
+                        <ul class="quick-links">
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="faqs.html">FAQs</a></li>
+                            <li><a href="privacy.html">Privacy Policy</a></li>
+                            <li><a href="terms.html">Terms of Service</a></li>
+                        </ul>
+                    </div>
+            
+                    <div class="footer-column newsletter-column">
+                        <h3>Subscribe</h3>
+                        <p>Get updates and exclusive rewards delivered to your inbox.</p>
+                        <form id="subscribe-form" method="POST" action="subscribe.php">
+                            <input type="email" name="email" id="subscribe-email" placeholder="Enter your email" class="newsletter-input" required>
+                            <button type="submit" class="newsletter-button">Subscribe</button>
+                        </form>
+                        <p id="subscribe-message" style="margin-top: 10px; color: green; display: none;"></p>
+                    </div>
+                </div>
+            
+                <div class="footer-divider"></div>
+                <p class="footer-text">&copy; <span id="year"></span> PerkView. All Rights Reserved.</p>
+            </footer>
+
+
+    <script src="script.js" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - PerkView</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/favicon.png" type="image/png">
+</head>
+
+<body>
+
+    <!----------- Header ----------->
+    <header class="header">
+        <div class="container">
+            <!-- Logo -->
+            <div class="logo">
+                <img src="images/logo.png" alt="Brand Logo" class="logo-image">
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="video.html" class="nav-link">Videos</a>
+                <a href="upload.html" class="nav-link">Upload Video</a>
+            </nav>
+
+
+
+            <!-- User Options -->
+             <script src="session.js"></script>
+            <div class="user-options">
+                <a href="sign-in.html">
+                    <button class="sign-button" id="signInButton">Sign In / Sign Up</button>
+                </a>
+                <div class="logged-in-state" id="loggedInState" style="display: none;">
+                    <!-- Wrap the text in an anchor tag -->
+                    <a href="user.html" class="welcome-link">
+                        <span class="points">Welcome, <span id="username">Username</span></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!----------- Sign-In Section -----------> 
+    <section class="welcome-section-signin">
+        <div class="welcome-container-signin">
+            <h1 class="welcome-tagline-signin">Welcome back! Sign in to continue watching and earning.</h1>
+        </div>
+    </section>
+
+    <section class="sign-in-section-signin">
+        <div class="sign-in-container-signin">
+            <h2 class="sign-in-title-signin">Sign In</h2>
+            <form id="sign-in-form-signin" class="sign-in-form-signin" action="login.php" method="POST" onsubmit="return handleFormSubmit(event)">
+                <!-- Email/Username Field -->
+                <div class="form-group-signin">
+                    <label for="email-username-signin" class="form-label-signin">Email Address or Username</label>
+                    <input type="text" id="email-username-signin" name="email-username-signin" class="form-input-signin" placeholder="Enter your email or username" required>
+                    <span class="error-message-signin" id="email-username-error-signin"></span>
+                </div>
+
+                <!-- Password Field -->
+                <div class="form-group-signin">
+                    <label for="password-signin" class="form-label-signin">Password</label>
+                    <div class="password-container-signin">
+                        <input type="password" id="password-signin" name="password-signin" class="form-input-signin" placeholder="Enter your password" required>
+                        <i id="toggle-password-signin" class="eye-icon-signin">&#x1F441;</i>
+                    </div>
+                    <span class="error-message-signin" id="password-error-signin"></span>
+                </div>
+
+                <!-- Line Separator -->
+                <div class="line-separator"></div>
+
+                <!-- Remember Me Option -->
+                <div class="form-group-signin remember-me-signin">
+                    <input type="checkbox" id="remember-me-signin" name="remember-me-signin" class="form-checkbox-signin">
+                    <label for="remember-me-signin" class="remember-me-label-signin">Remember Me</label>
+                </div>
+
+                <!-- Sign-In Button -->
+                <button type="submit" class="sign-in-button-signin">Sign In</button>
+
+                <!-- Error message -->
+                <span class="error-message-signin" id="general-error-signin"></span>
+            </form>
+        </div>
+    </section>
+
+    <section class="additional-links-section-signin">
+        <div class="additional-links-container-signin">
+            <!-- Forgot Password Link -->
+            <div class="link-group-signin">
+                <a href="forgot-password.html" class="additional-link-signin" id="forgot-password-link-signin">Forgot Password?</a>
+            </div>
+
+            <!-- New User? Sign Up Link -->
+            <div class="link-group-signin">
+                <a href="sign-up.html" class="additional-link-signin" id="sign-up-link-signin">New User? Sign Up</a>
+            </div>
+        </div>
+    </section>
+
+    <!----------- Footer -----------> 
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Quick Links -->
+                    <div class="footer-column links-column">
+                        <h3>Quick Links</h3>
+                        <ul class="quick-links">
+                            <li><a href="about-us.html">About Us</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="faqs.html">FAQs</a></li>
+                            <li><a href="privacy.html">Privacy Policy</a></li>
+                            <li><a href="terms.html">Terms of Service</a></li>
+                        </ul>
+                    </div>
+        
+                    <div class="footer-column newsletter-column">
+                        <h3>Subscribe</h3>
+                        <p>Get updates and exclusive rewards delivered to your inbox.</p>
+                        <form id="subscribe-form" method="POST" action="subscribe.php">
+                            <input type="email" name="email" id="subscribe-email" placeholder="Enter your email" class="newsletter-input" required>
+                            <button type="submit" class="newsletter-button">Subscribe</button>
+                        </form>
+                        <p id="subscribe-message" style="margin-top: 10px; color: green; display: none;"></p>
+                    </div>
+        </div>
+
+        <div class="footer-divider"></div>
+        <p class="footer-text">&copy; <span id="year"></span> PerkView. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScript for form handling -->
+    <script src="sign-in.js" defer></script>
+</body>
+</html>

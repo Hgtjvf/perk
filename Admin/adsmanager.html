@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel Dashboard - PerkView</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="admin-main">
+        <!-- Sidebar -->
+        <aside class="sidebar-main">
+            <div class="sidebar-header-main">
+                <h2>PerkView Admin</h2>
+            </div>
+            <nav class="sidebar-nav-main">
+                <ul>
+                    <li><a href="dashboard.html">Overview</a></li>
+                    <li><a href="user-management.html">User Management</a></li>
+                    <li><a href="video-management.html">Video Management</a></li>
+                    <li><a href="adsmanager.html">Advertisement Management</a></li>
+                    <li><a href="#">Content Moderation</a></li>
+                    <li><a href="#">Platform Settings</a></li>
+                    <li><a href="#">Analytics & Reports</a></li>
+                    <li><a href="#">Notifications & Alerts</a></li>
+                    <li><a href="#">Feedback & Support</a></li>
+                    <li><a href="#">System Health & Security</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        
+<div class="container-admanager">
+
+  <h1>CPCV Ads Management Admin Panel</h1>
+
+  <!-- 1. Add New CPCV Ad Unit -->
+  <section id="add-new-ad-admanager" class="admanager" aria-label="Add New CPCV Ad Unit">
+    <h2>Add New CPCV Ad Unit</h2>
+    <form id="form-add-ad-admanager" novalidate>
+      <label for="ad-name-admanager" class="admanager">Ad Name</label>
+      <input type="text" id="ad-name-admanager" class="admanager" required placeholder="Enter ad name" />
+
+      <label for="google-adcode-admanager" class="admanager">Google Ad Code</label>
+      <textarea id="google-adcode-admanager" class="admanager" rows="3" placeholder="Paste Google ad code snippet here" required></textarea>
+
+      <label for="placement-admanager" class="admanager">Placement</label>
+      <select id="placement-admanager" class="admanager" required>
+        <option value="" disabled selected>Select placement</option>
+        <option value="pre-roll">Pre-roll</option>
+        <option value="mid-roll">Mid-roll</option>
+      </select>
+
+      <label for="reward-points-admanager" class="admanager">Reward Points</label>
+      <input type="number" id="reward-points-admanager" class="admanager" min="0" step="1" required placeholder="Points awarded per completed view" />
+
+      <label for="status-admanager" class="admanager">Status</label>
+      <select id="status-admanager" class="admanager" required>
+        <option value="active">Active</option>
+        <option value="paused">Paused</option>
+      </select>
+
+      <label for="start-date-admanager" class="admanager">Start Date</label>
+      <input type="date" id="start-date-admanager" class="admanager" required />
+
+      <label for="end-date-admanager" class="admanager">End Date</label>
+      <input type="date" id="end-date-admanager" class="admanager" required />
+
+      <label for="max-views-user-admanager" class="admanager">Max Views per User</label>
+      <input type="number" id="max-views-user-admanager" class="admanager" min="1" step="1" required placeholder="Maximum rewarded views per user" />
+
+      <button type="submit" id="add-ad-btn-admanager" class="admanager">Add Ad Unit</button>
+    </form>
+  </section>
+
+  <!-- 2. List of All CPCV Ads -->
+  <section id="list-ads-admanager" class="admanager" aria-label="List of All CPCV Ads">
+    <h2>All CPCV Ads</h2>
+    <table id="ads-table-admanager" class="admanager" aria-describedby="ads-table-description">
+      <caption id="ads-table-description">Table listing all CPCV ads and their details</caption>
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Status</th>
+          <th scope="col">Reward Points</th>
+          <th scope="col">Views</th>
+          <th scope="col">Earnings</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody id="ads-table-body-admanager">
+        <!-- Dynamic rows inserted here -->
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 3. Ad Performance Metrics -->
+  <section id="performance-metrics-admanager" class="admanager" aria-label="Ad Performance Metrics">
+    <h2>Ad Performance Metrics</h2>
+    <div class="metrics-admanager">
+      <div class="metric-card-admanager" aria-live="polite">
+        <h4>Completed Views</h4>
+        <p id="completed-views-admanager">0</p>
+      </div>
+      <div class="metric-card-admanager" aria-live="polite">
+        <h4>Total Rewards Given</h4>
+        <p id="total-rewards-admanager">0</p>
+      </div>
+      <div class="metric-card-admanager" aria-live="polite">
+        <h4>Revenue Earned</h4>
+        <p id="revenue-earned-admanager">$0.00</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Reward Settings -->
+  <section id="reward-settings-admanager" class="admanager" aria-label="Reward Settings">
+    <h2>Global Reward Settings</h2>
+    <form id="form-reward-settings-admanager" novalidate>
+      <label for="default-points-admanager" class="admanager">Default Points per Complete Ad View</label>
+      <input type="number" id="default-points-admanager" class="admanager" min="0" step="1" required placeholder="Default points" />
+
+      <label for="max-ads-per-day-admanager" class="admanager">Max Rewarded Ads per User per Day</label>
+      <input type="number" id="max-ads-per-day-admanager" class="admanager" min="1" step="1" required placeholder="Max ads per day" />
+
+      <label for="cooldown-time-admanager" class="admanager">Cooldown Time Between Rewarded Ads (seconds)</label>
+      <input type="number" id="cooldown-time-admanager" class="admanager" min="0" step="1" required placeholder="Cooldown seconds" />
+
+      <label for="enable-rewarded-ads-admanager" class="admanager">Enable Rewarded Ads</label>
+      <input type="checkbox" id="enable-rewarded-ads-admanager" />
+
+      <button type="submit" id="save-settings-btn-admanager" class="admanager">Save Settings</button>
+    </form>
+  </section>
+
+  <!-- 5. Reports & Analytics -->
+  <section id="reports-admanager" class="admanager" aria-label="Reports and Analytics">
+    <h2>Reports & Analytics</h2>
+    <table class="admanager" aria-describedby="reports-table-description">
+      <caption id="reports-table-description">Summary report of ads watched, points rewarded, and revenue generated</caption>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Ads Watched Completely</th>
+          <th>Points Rewarded</th>
+          <th>Revenue Generated</th>
+        </tr>
+      </thead>
+      <tbody id="reports-table-body-admanager">
+        <!-- Dynamic rows inserted here -->
+      </tbody>
+    </table>
+    <button id="export-data-admanager" class="admanager">Export Data</button>
+  </section>
+
+  <!-- 6. Frontend Video Player Integration -->
+  <section id="frontend-integration-admanager" class="admanager" aria-label="Frontend Video Player Integration">
+    <h2>Video Player with CPCV Ad Integration</h2>
+    <div id="video-player-container-admanager">
+      <!-- Replace with your actual video player -->
+      <video id="video-player-admanager" controls crossorigin="anonymous" preload="metadata">
+        <source src="sample-video.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div id="cpcv-ad-integration-admanager" aria-live="polite" style="margin-top: 10px;">
+        <!-- Ads integration placeholder -->
+      </div>
+    </div>
+
+    <div id="reward-confirmation-admanager" role="alert" aria-live="assertive" style="display:none;">
+      You earned 0 points for watching the ad!
+    </div>
+
+    <div id="daily-limit-tracker-admanager" aria-live="polite" style="margin-top:10px; color:#555;">
+      Ads watched today: 0 / 0
+    </div>
+    <div id="cooldown-timer-admanager" aria-live="polite" style="margin-top:5px; color:#555;">
+      Next rewarded ad available in: 0s
+    </div>
+  </section>
+</div>
+
+
+    </div>
+
+
+    <script src="add_ad.js"></script>
+</body>
+</html>

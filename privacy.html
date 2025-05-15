@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PerkView</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/favicon.png" type="image/png">
+</head>
+
+<body>
+
+    <!----------- Header ----------->
+    <header class="header">
+        <div class="container">
+            <!-- Logo -->
+            <div class="logo">
+                <img src="images/logo.png" alt="Brand Logo" class="logo-image">
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="video.html" class="nav-link">Videos</a>
+                <a href="upload.html" class="nav-link">Upload Video</a>
+            </nav>
+
+
+
+            <!-- User Options -->
+             <script src="session.js"></script>
+            <div class="user-options">
+                <a href="sign-in.html">
+                    <button class="sign-button" id="signInButton">Sign In / Sign Up</button>
+                </a>
+                <div class="logged-in-state" id="loggedInState" style="display: none;">
+                    <!-- Wrap the text in an anchor tag -->
+                    <a href="user.html" class="welcome-link">
+                        <span class="points">Welcome, <span id="username">Username</span></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+<!-- Privacy Policy Introduction Section -->
+<div class="privacy-intro-privacy">
+  <!-- Headline -->
+  <h2 class="header-privacy">Privacy Policy</h2>
+
+  <!-- Brief Text -->
+  <p class="text-privacy">
+      At PerkView, we respect your privacy and are committed to protecting your personal information. This Privacy Policy explains how we collect, use, and protect your data.
+  </p>
+</div>
+
+<!-- Information We Collect Section -->
+<div class="information-privacy">
+  <!-- Section Title -->
+  <h2 class="header-privacy">Information We Collect</h2>
+
+  <!-- Subsection 1: Personal Information -->
+  <div class="subsection-privacy">
+      <h3 class="title-privacy">Personal Information</h3>
+      <p class="text-privacy">
+          When you create an account or interact with the platform, we collect personal information such as your name, email address, and other details you provide during registration.
+      </p>
+  </div>
+
+  <!-- Subsection 2: Usage Data -->
+  <div class="subsection-privacy">
+      <h3 class="title-privacy">Usage Data</h3>
+      <p class="text-privacy">
+          We also collect data about how you interact with our platform, including your IP address, browser type, device information, and pages you visit.
+      </p>
+  </div>
+
+  <!-- Subsection 3: Cookies and Tracking Technologies -->
+  <div class="subsection-privacy">
+      <h3 class="title-privacy">Cookies and Tracking Technologies</h3>
+      <p class="text-privacy">
+          We use cookies and similar technologies to improve your experience, analyze trends, and serve targeted ads. You can choose to disable cookies in your browser settings.
+      </p>
+  </div>
+</div>
+
+<section class="usage-info-privacy">
+  <h2 class="header-privacy">How We Use Your Information</h2>
+
+  <div class="subsection-privacy">
+      <h3 class="title-privacy">1. Provide and Improve Services</h3>
+      <p class="text-privacy">We use your information to provide, improve, and personalize our services, including recommending videos and notifying you about rewards, challenges, and new features.</p>
+  </div>
+
+  <div class="subsection-privacy">
+      <h3 class="title-privacy">2. Communication</h3>
+      <p class="text-privacy">We may use your email address to send you updates, newsletters, promotional offers, or important notifications regarding your account and platform activities.</p>
+  </div>
+
+  <div class="subsection-privacy">
+      <h3 class="title-privacy">3. Advertising and Analytics</h3>
+      <p class="text-privacy">We use third-party advertising services and analytics tools to display personalized ads and analyze how users interact with our platform. These services may track your behavior across different websites.</p>
+  </div>
+
+  <div class="subsection-privacy">
+      <h3 class="title-privacy">4. Legal Obligations</h3>
+      <p class="text-privacy">We may also share your information if required by law or in response to a legal request from authorities.</p>
+  </div>
+</section>
+
+<!-- Error Handling -->
+<div id="error-message-privacy" class="error-message-privacy">
+  <p>Please review your consent to the data usage terms to continue using our services.</p>
+</div>
+
+<section class="data-security-privacy">
+  <h2 class="header-privacy">Data Security</h2>
+
+  <div class="subsection-privacy">
+      <h3 class="title-privacy">1. Protection Measures</h3>
+      <p class="text-privacy">We implement industry-standard security measures, such as encryption and secure servers, to protect your personal information.</p>
+  </div>
+
+  <div class="subsection-privacy">
+      <h3 class="title-privacy">2. Data Breach Notification</h3>
+      <p class="text-privacy">If we experience a data breach that affects your personal information, we will notify you promptly and take steps to mitigate the effects.</p>
+  </div>
+</section>
+
+<!-- Error Handling -->
+<div id="error-message-privacy" class="error-message-privacy">
+  <p>Your data is important to us. We will always prioritize your security and notify you in case of any data breach.</p>
+</div>
+
+<section class="data-retention-privacy">
+  <h2 class="header-privacy">Data Retention</h2>
+
+  <div class="subsection-privacy">
+      <h3 class="title-privacy">1. How Long Data Is Stored</h3>
+      <p class="text-privacy">We retain your personal information as long as your account is active or as needed to fulfill the purposes outlined in this Privacy Policy. You can request deletion of your account at any time.</p>
+  </div>
+</section>
+
+<!-- Error Handling -->
+<div id="error-message-privacy" class="error-message-privacy">
+  <p>Your data will only be stored as long as necessary. You can request account deletion at any time.</p>
+</div>
+
+<section id="rights-privacy" class="rights-privacy">
+  <div class="container-privacy">
+      <h2 class="header-privacy">Your Rights and Choices</h2>
+
+      <div class="subsection-privacy">
+          <h3 class="title-privacy">Accessing and Updating Information</h3>
+          <p class="text-privacy">You can update or delete your personal information by logging into your account settings or contacting our support team.</p>
+      </div>
+
+      <div class="subsection-privacy">
+          <h3 class="title-privacy">Opting Out of Marketing</h3>
+          <p class="text-privacy">You can opt-out of receiving promotional emails by clicking the 'unsubscribe' link in the email or adjusting your account preferences.</p>
+      </div>
+
+      <div class="subsection-privacy">
+          <h3 class="title-privacy">Cookies and Tracking</h3>
+          <p class="text-privacy">You can manage your cookie preferences through your browser settings. However, please note that disabling cookies may affect some features of the platform.</p>
+      </div>
+  </div>
+</section>
+
+<section class="contact-privacy">
+  <h2 class="header-privacy">Contact Information</h2>
+  <p class="text-privacy">
+      If you have any questions or concerns about this Privacy Policy, please visit our 
+      <a href="contact.html" class="link-privacy" aria-label="Visit our Contact Us page">Contact Us</a> page.
+  </p>
+</section>
+
+
+            <!------------- Footer ------------->
+            <footer class="footer">
+                <div class="footer-container">
+                    <!-- Quick Links -->
+<div class="footer-column links-column">
+                        <h3>Quick Links</h3>
+                        <ul class="quick-links">
+                            <li><a href="about-us.html">About Us</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="faqs.html">FAQs</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="terms.html">Terms of Service</a></li>
+                        </ul>
+                    </div>
+            
+                    <div class="footer-column newsletter-column">
+                        <h3>Subscribe</h3>
+                        <p>Get updates and exclusive rewards delivered to your inbox.</p>
+                        <form id="subscribe-form" method="POST" action="subscribe.php">
+                            <input type="email" name="email" id="subscribe-email" placeholder="Enter your email" class="newsletter-input" required>
+                            <button type="submit" class="newsletter-button">Subscribe</button>
+                        </form>
+                        <p id="subscribe-message" style="margin-top: 10px; color: green; display: none;"></p>
+                    </div>
+                </div>
+            
+                <div class="footer-divider"></div>
+                <p class="footer-text">&copy; <span id="year"></span> PerkView. All Rights Reserved.</p>
+            </footer>
+            
+
+    <script src="script.js" defer></script>
+    <script>
+           document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>
