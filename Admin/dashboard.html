@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel Dashboard - PerkView</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="admin-main">
+        <!-- Sidebar -->
+        <aside class="sidebar-main">
+            <div class="sidebar-header-main">
+                <h2>PerkView Admin</h2>
+            </div>
+            <nav class="sidebar-nav-main">
+                <ul>
+                    <li><a href="dashboard.html">Overview</a></li>
+                    <li><a href="user-management.html">User Management</a></li>
+                    <li><a href="video-management.html">Video Management</a></li>
+                    <li><a href="adsmanager.html">Advertisement Management</a></li>
+                    <li><a href="#">Content Moderation</a></li>
+                    <li><a href="#">Platform Settings</a></li>
+                    <li><a href="#">Analytics & Reports</a></li>
+                    <li><a href="#">Notifications & Alerts</a></li>
+                    <li><a href="#">Feedback & Support</a></li>
+                    <li><a href="#">System Health & Security</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content-main">
+            <!-- Quick Stats Section -->
+            <section class="quick-stats-main">
+                <h2>Quick Stats</h2>
+                <div class="stats-cards-main">
+                    <div class="stat-card-main">
+                        <h3>Total Users</h3>
+                        <p><!-- Dynamic Total Users Count --></p>
+                    </div>
+                    <div class="stat-card-main">
+                        <h3>Total Videos</h3>
+                        <p><!-- Dynamic Total Videos Count --></p>
+                    </div>
+                    <div class="stat-card-main">
+                        <h3>Active Users (Today)</h3>
+                        <p><!-- Dynamic Active Users Count --></p>
+                    </div>
+                    <div class="stat-card-main">
+                        <h3>Total Revenue</h3>
+                        <p><!-- Dynamic Total Revenue --></p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recent Activity Section -->
+            <section class="recent-activity-main">
+                <h3>Recent Activity</h3>
+                <ul>
+                    <!-- Dynamic Activity Data -->
+                </ul>
+            </section>
+
+            <!-- Notifications Section -->
+            <section class="notifications-main">
+                <h3>System Notifications</h3>
+                <ul>
+                    <!-- Dynamic Notifications Data -->
+                </ul>
+            </section>
+
+            <!-- User Management Section -->
+            <section class="user-management-main">
+                <h2>User Management</h2>
+                <div class="search-filters-main">
+                    <input type="text" placeholder="Search users..." id="userSearchMain">
+                    <button>Search</button>
+                </div>
+                <table class="user-table-main">
+                    <thead>
+                        <tr>
+                            <th>User</th>
+                            <th>Points</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="userListMain">
+                        <!-- Dynamic User Data will appear here -->
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Video Management Section -->
+            <section class="video-management-main">
+                <h2>Video Management</h2>
+                <div class="video-filters-main">
+                    <input type="text" placeholder="Search by title, tags, or category">
+                    <button>Search</button>
+                </div>
+                <table class="video-table-main">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Category</th>
+                            <th>Views</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="videoListMain">
+                        <!-- Dynamic Video Data will appear here -->
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- System Health & Security Section -->
+            <section class="system-health-main">
+                <h2>System Health & Security</h2>
+                <div class="health-status-main">
+                    <div class="status-card-main">
+                        <h3>Server Status</h3>
+                        <p><!-- Dynamic Server Status --></p>
+                    </div>
+                    <div class="status-card-main">
+                        <h3>Uptime</h3>
+                        <p><!-- Dynamic Uptime --></p>
+                    </div>
+                    <div class="status-card-main">
+                        <h3>Suspicious Activity</h3>
+                        <p><!-- Dynamic Suspicious Activity Data --></p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

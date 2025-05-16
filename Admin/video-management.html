@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin Panel Dashboard - PerkView</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="admin-main">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar-main" role="navigation" aria-label="Sidebar Navigation">
+      <header class="sidebar-header-main">
+        <h1>PerkView Admin</h1>
+      </header>
+      <nav class="sidebar-nav-main" aria-label="Primary">
+        <ul>
+          <li><a href="dashboard.html">Overview</a></li>
+          <li><a href="user-management.html">User Management</a></li>
+          <li><a href="video-management.html">Video Management</a></li>
+          <li><a href="adsmanager.html">Advertisement Management</a></li>
+          <li><a href="#" role="button" tabindex="0">Content Moderation</a></li>
+          <li><a href="#" role="button" tabindex="0">Platform Settings</a></li>
+          <li><a href="#" role="button" tabindex="0">Analytics &amp; Reports</a></li>
+          <li><a href="#" role="button" tabindex="0">Notifications &amp; Alerts</a></li>
+          <li><a href="#" role="button" tabindex="0">Feedback &amp; Support</a></li>
+          <li><a href="#" role="button" tabindex="0">System Health &amp; Security</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-vidmanage" role="main">
+      <section aria-labelledby="video-list-title">
+        <h2 id="video-list-title">Video List</h2>
+
+        <form
+          class="search-filters-videomanage"
+          role="search"
+          aria-label="Search and filter videos"
+          id="filterForm"
+          autocomplete="off"
+        >
+          <label for="search-title-videomanage" class="visually-hidden">Search by Title</label>
+          <input
+            type="search"
+            id="search-title-videomanage"
+            name="searchTitle"
+            placeholder="Search by Title"
+            aria-describedby="search-title-desc"
+          />
+          <span id="search-title-desc" class="visually-hidden">Enter video title to search</span>
+
+          <label for="search-uploader-videomanage" class="visually-hidden">Search by Uploader</label>
+          <input
+            type="search"
+            id="search-uploader-videomanage"
+            name="searchUploader"
+            placeholder="Search by Uploader"
+            aria-describedby="search-uploader-desc"
+          />
+          <span id="search-uploader-desc" class="visually-hidden">Enter uploader name to search</span>
+
+          <label for="search-videoid-videomanage" class="visually-hidden">Search by Video ID</label>
+          <input
+            type="search"
+            id="search-videoid-videomanage"
+            name="searchVideoID"
+            placeholder="Search by Video ID"
+            aria-describedby="search-videoid-desc"
+          />
+          <span id="search-videoid-desc" class="visually-hidden">Enter video ID to search</span>
+
+          <label for="filter-status-videomanage" class="visually-hidden">Filter by Status</label>
+          <select id="filter-status-videomanage" name="filterStatus" aria-label="Filter by Status">
+            <option value="">All Statuses</option>
+            <option value="Published">Published</option>
+            <option value="Pending">Pending</option>
+            <option value="Removed">Removed</option>
+          </select>
+
+          <label for="filter-category-videomanage" class="visually-hidden">Filter by Category</label>
+          <select id="filter-category-videomanage" name="filterCategory" aria-label="Filter by Category">
+            <option value="">All Categories</option>
+          </select>
+
+          <label for="filter-upload-date-videomanage" class="visually-hidden">Filter by Upload Date</label>
+          <input
+            type="date"
+            id="filter-upload-date-videomanage"
+            name="filterUploadDate"
+            aria-label="Filter by Upload Date"
+          />
+
+          <label for="filter-flagged-videomanage" class="visually-hidden">Filter by Flagged Status</label>
+          <select id="filter-flagged-videomanage" name="filterFlagged" aria-label="Filter by Flagged Status">
+            <option value="">All Videos</option>
+            <option value="flagged">Flagged</option>
+            <option value="not-flagged">Not Flagged</option>
+          </select>
+
+          <button type="submit" aria-label="Apply Filters">Filter</button>
+        </form>
+
+        <table
+          id="video-list-table"
+          role="grid"
+          aria-describedby="video-list-description"
+          aria-label="Videos List Table"
+          class="video-list-table"
+        >
+          <caption id="video-list-description">
+            List of videos with details and management actions.
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col" id="header-videoid">Video ID</th>
+              <th scope="col">Thumbnail</th>
+              <th scope="col" id="header-title">Title</th>
+              <th scope="col" id="header-uploader">Uploader</th>
+              <th scope="col" id="header-category">Category</th>
+              <th scope="col" id="header-upload-date">Upload Date</th>
+              <th scope="col" id="header-views-likes">Views &amp; Likes</th>
+              <th scope="col" id="header-status">Status</th>
+              <th scope="col" id="header-reward-points">Reward Points</th>
+              <th scope="col" id="header-actions">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="video-list-body-videomanage">
+            <!-- Dynamic video rows will populate here -->
+          </tbody>
+        </table>
+
+        <nav aria-label="Pagination Navigation" class="pagination-nav">
+          <button id="prevPage" type="button" aria-label="Previous Page" disabled>Prev</button>
+          <span id="pageInfo">Page 1</span>
+          <button id="nextPage" type="button" aria-label="Next Page">Next</button>
+        </nav>
+      </section>
+    </main>
+  </div>
+
+  <script src="fetch_videos.js"></script>
+</body>
+</html>

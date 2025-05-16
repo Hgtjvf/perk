@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="admin-panel-usermanage">
+        <!-- Sidebar -->
+        <aside class="sidebar-main">
+            <div class="sidebar-header-main">
+                <h2>PerkView Admin</h2>
+            </div>
+            <nav class="sidebar-nav-main">
+                <ul>
+                    <li><a href="dashboard.html">Overview</a></li>
+                    <li><a href="user-management.html">User Management</a></li>
+                    <li><a href="video-management.html">Video Management</a></li>
+                    <li><a href="adsmanager.html">Advertisement Management</a></li>
+                    <li><a href="#">Content Moderation</a></li>
+                    <li><a href="#">Platform Settings</a></li>
+                    <li><a href="#">Analytics & Reports</a></li>
+                    <li><a href="#">Notifications & Alerts</a></li>
+                    <li><a href="#">Feedback & Support</a></li>
+                    <li><a href="#">System Health & Security</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="center-usermanage">
+            <!-- User Table Section -->
+            <section id="user-table-usermanage">
+                <h2>User Table</h2>
+                <div class="search-filters-usermanage">
+                    <input type="text" id="searchInput" placeholder="Search by username, email, or ID">
+                    <button id="filterBtn">Filter</button>
+                </div>
+                <table border="1" cellpadding="8" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>User ID</th>
+                            <th>Full Name</th>
+                            <th>Username</th>
+                            <th>Email Address</th>
+                            <th>Points</th>
+                            <th>PKR</th>
+                            <th>Account Status</th>
+                            <th>Registration Date</th>
+                            <th>Last Login</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="userTableBody">
+                        <!-- Rows will be populated dynamically via JavaScript -->
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </div>
+
+
+    <!-- JavaScript File -->
+    <script src="usermanage.js"></script>
+</body>
+</html>
