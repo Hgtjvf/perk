@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PerkView</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/favicon.png" type="image/png">
+</head>
+
+<body>
+
+
+    <!----------- Header ----------->
+    <header class="header">
+        <div class="container">
+            <!-- Logo -->
+            <div class="logo">
+                <img src="images/logo.png" alt="Brand Logo" class="logo-image">
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="video.html" class="nav-link">Videos</a>
+                <a href="upload.html" class="nav-link">Upload Video</a>
+            </nav>
+
+
+
+            <!-- User Options -->
+             <script src="session.js"></script>
+            <div class="user-options">
+                <a href="sign-in.html">
+                    <button class="sign-button" id="signInButton">Sign In / Sign Up</button>
+                </a>
+                <div class="logged-in-state" id="loggedInState" style="display: none;">
+                    <!-- Wrap the text in an anchor tag -->
+                    <a href="user.html" class="welcome-link">
+                        <span class="points">Welcome, <span id="username">Username</span></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="intro-terms">
+        <h2 class="headline-terms">Terms of Service</h2>
+        <p class="intro-text-terms">
+            Welcome to our platform. These Terms of Service govern your use of the services provided by us. Please read them carefully.
+        </p>
+    </section>
+    
+    <section class="eligibility-terms">
+        <h2 class="title-terms">User Eligibility</h2>
+        <p class="text-terms">
+            To use our platform, you must be at least 13 years old. If you are under 18, you must have parental consent to use the service.
+        </p>
+    </section>
+    
+    <section class="creation-terms">
+        <h2 class="title-terms">Account Creation and Responsibilities</h2>
+        <p class="text-terms">
+            You are responsible for maintaining the accuracy of your registration details and for keeping your account credentials secure.
+        </p>
+    </section>
+    
+    <section class="upload-terms">
+        <h2 class="title-terms">Content Upload and Usage</h2>
+        <p class="text-terms">
+            By uploading content to our platform, you grant us a license to use, display, and distribute your content according to our policies.
+        </p>
+    </section>
+    
+    <section class="conduct-terms">
+        <h2 class="title-terms">User Conduct</h2>
+        <ul class="list-terms">
+            <li>No harmful, abusive, or illegal behavior.</li>
+            <li>Respect the rights and privacy of others.</li>
+            <li>No spamming or posting malicious content.</li>
+        </ul>
+    </section>
+    
+    <section class="rewards-terms">
+        <h2 class="title-terms">Rewards and Earnings</h2>
+        <p class="text-terms">
+            Rewards are earned based on activity on the platform. Conditions apply, and rewards may be forfeited for violation of the terms.
+        </p>
+    </section>
+    
+    <section class="advertisements-terms">
+        <h2 class="title-terms">Advertisements</h2>
+        <p class="text-terms">
+            We may display advertisements on the platform. Users are prohibited from interfering with the ad systems in any way.
+        </p>
+    </section>
+    
+    <section class="property-terms">
+        <h2 class="title-terms">Intellectual Property</h2>
+        <p class="text-terms">
+            All platform content, including logos, videos, and materials, are owned by us or licensed to us. You may not use them without permission.
+        </p>
+    </section>
+    
+    <section class="termination-terms">
+        <h2 class="title-terms">Termination of Accounts</h2>
+        <p class="text-terms">
+            We reserve the right to suspend or terminate accounts for violations of these terms. Points and rewards may be forfeited.
+        </p>
+    </section>
+    
+    <section class="liability-terms">
+        <h2 class="title-terms">Limitation of Liability</h2>
+        <p class="text-terms">
+            We are not responsible for any damages or losses that may occur through your use of the platform.
+        </p>
+    </section>
+    
+    <section class="amendments-terms">
+        <h2 class="title-terms">Amendments to Terms</h2>
+        <p class="text-terms">
+            We may update these terms periodically. Changes will be posted on this page and will take effect upon posting.
+        </p>
+    </section>
+    
+    <section class="law-terms">
+        <h2 class="title-terms">Governing Law</h2>
+        <p class="text-terms">
+            These Terms of Service are governed by the laws of Pakistan. Disputes will be resolved in the appropriate courts in this jurisdiction.
+        </p>
+    </section>
+    
+    <section class="contact-terms">
+        <h2 class="title-terms">Contact Information</h2>
+        <p class="text-terms">
+            If you have any questions or concerns about these Terms of Service, please visit our <a href="contact.html" class="link-terms">Contact Us</a> page.
+        </p>
+    </section>
+    
+
+
+            <!------------- Footer ------------->
+            <footer class="footer">
+                <div class="footer-container">
+                    <!-- Quick Links -->
+                    <div class="footer-column links-column">
+                        <h3>Quick Links</h3>
+                        <ul class="quick-links">
+                            <li><a href="about-us.html">About Us</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="#">FAQs</a></li>
+                            <li><a href="privacy.html">Privacy Policy</a></li>
+                            <li><a href="terms.html">Terms of Service</a></li>
+                        </ul>
+                    </div>
+            
+                    <div class="footer-column newsletter-column">
+                        <h3>Subscribe</h3>
+                        <p>Get updates and exclusive rewards delivered to your inbox.</p>
+                        <form id="subscribe-form" method="POST" action="subscribe.php">
+                            <input type="email" name="email" id="subscribe-email" placeholder="Enter your email" class="newsletter-input" required>
+                            <button type="submit" class="newsletter-button">Subscribe</button>
+                        </form>
+                        <p id="subscribe-message" style="margin-top: 10px; color: green; display: none;"></p>
+                    </div>
+                </div>
+            
+                <div class="footer-divider"></div>
+                <p class="footer-text">&copy; <span id="year"></span> PerkView. All Rights Reserved.</p>
+            </footer>
+            
+            <script>
+           document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+    <script src="script.js" defer></script>
+</body>
+
+</html>

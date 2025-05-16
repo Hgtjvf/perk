@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PerkView</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/favicon.png" type="image/png">
+</head>
+
+<body>
+
+
+    <!----------- Header ----------->
+    <header class="header">
+        <div class="container">
+            <!-- Logo -->
+            <div class="logo">
+                <img src="images/logo.png" alt="Brand Logo" class="logo-image">
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="video.html" class="nav-link">Videos</a>
+                <a href="upload.html" class="nav-link">Upload Video</a>
+            </nav>
+
+
+
+            <!-- User Options -->
+             <script src="session.js"></script>
+            <div class="user-options">
+                <a href="sign-in.html">
+                    <button class="sign-button" id="signInButton">Sign In / Sign Up</button>
+                </a>
+                <div class="logged-in-state" id="loggedInState" style="display: none;">
+                    <!-- Wrap the text in an anchor tag -->
+                    <a href="user.html" class="welcome-link">
+                        <span class="points">Welcome, <span id="username">Username</span></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+
+        <!-- FAQ Section -->
+        <section class="faq-section-faq">
+          <!-- Headline -->
+          <h2 class="faq-header-faq">Frequently Asked Questions</h2>
+          
+          <!-- Brief Text -->
+          <p class="faq-introduction-faq">
+            Have a question? You might find the answer here. If not, feel free to contact us!
+          </p>
+        </section>
+      
+        <!-- FAQ Items -->
+        <section class="faq-items-faq">
+          <!-- General Platform Information -->
+          <div class="faq-category-faq">
+            <h3 class="faq-category-header-faq">General Platform Information</h3>
+            <div class="faq-item-faq">
+              <strong class="faq-question-faq">What is PerkView?</strong>
+              <p class="faq-answer-faq">PerkView is a platform where users can watch videos, earn rewards, and engage with content through interactive features.</p>
+            </div>
+            <div class="faq-item-faq">
+              <strong class="faq-question-faq">How does PerkView work?</strong>
+              <p class="faq-answer-faq">Users can watch videos, participate in challenges, earn points, and redeem them for rewards.</p>
+            </div>
+          </div>
+      
+          <!-- Sign-Up/Account Related -->
+          <div class="faq-category-faq">
+            <h3 class="faq-category-header-faq">Sign-Up/Account Related</h3>
+            <div class="faq-item-faq">
+              <strong class="faq-question-faq">How do I create an account?</strong>
+              <p class="faq-answer-faq">Simply click on the “Sign Up” button, provide your details, and create an account to get started.</p>
+            </div>
+            <div class="faq-item-faq">
+              <strong class="faq-question-faq">I forgot my password. How can I reset it?</strong>
+              <p class="faq-answer-faq">Click on “Forgot Password?” on the login page, enter your email address, and follow the instructions to reset your password.</p>
+            </div>
+            <div class="faq-item-faq">
+              <strong class="faq-question-faq">Can I change my username or email address?</strong>
+              <p class="faq-answer-faq">Yes, you can modify your username or email from the account settings page.</p>
+            </div>
+          </div>
+      
+          <!-- Earning Rewards -->
+          <div class="faq-category-faq">
+            <h3 class="faq-category-header-faq">Earning Rewards</h3>
+            <div class="faq-item-faq">
+              <strong class="faq-question-faq">How do I earn rewards?</strong>
+              <p class="faq-answer-faq">You can earn rewards by watching videos, participating in challenges, and completing other platform activities.</p>
+            </div>
+            <div class="faq-item-faq">
+              <strong class="faq-question-faq">How do I redeem my rewards?</strong>
+              <p class="faq-answer-faq">You can redeem your rewards through the Rewards section on your account page. Choose from a variety of prizes or benefits.</p>
+            </div>
+            <div class="faq-item-faq">
+              <strong class="faq-question-faq">What are daily rewards?</strong>
+              <p class="faq-answer-faq">Daily rewards are bonus points or benefits that you can claim every day by logging into the platform.</p>
+            </div>
+          </div>
+      
+          <!-- Video Uploading and Content Creation -->
+          <div class="faq-category-faq">
+            <h3 class="faq-category-header-faq">Video Uploading &amp; Content Creation</h3>
+            <div class="faq-item-faq">
+              <strong class="faq-question-faq">How can I upload a video?</strong>
+              <p class="faq-answer-faq">Click on the “Upload Video” button in the account section, choose your video, and follow the prompts to submit it for review.</p>
+            </div>
+            <div class="faq-item-faq">
+              <strong class="faq-question-faq">What types of videos are allowed on PerkView?</strong>
+              <p class="faq-answer-faq">We allow videos that comply with our community guidelines, including family-friendly content and original works.</p>
+            </div>
+            <div class="faq-item-faq">
+              <strong class="faq-question-faq">How do I monetize my videos?</strong>
+              <p class="faq-answer-faq">You can monetize your videos through ad revenue sharing or tips from viewers if your account is eligible for monetization.</p>
+            </div>
+          </div>
+      
+          <!-- Gamification and Challenges -->
+          <div class="faq-category-faq">
+            <h3 class="faq-category-header-faq">Gamification &amp; Challenges</h3>
+            <div class="faq-item-faq">
+              <strong class="faq-question-faq">What are the challenges and contests?</strong>
+              <p class="faq-answer-faq">Challenges are tasks or activities that you can complete to earn points and rewards. Contests may have specific themes and prizes.</p>
+            </div>
+            <div class="faq-item-faq">
+              <strong class="faq-question-faq">How do I track my progress in challenges?</strong>
+              <p class="faq-answer-faq">You can track your progress in the Challenges section of your profile, where it shows your completion status and remaining tasks.</p>
+            </div>
+          </div>
+      
+          <!-- Platform Features and Navigation -->
+          <div class="faq-category-faq">
+            <h3 class="faq-category-header-faq">Platform Features &amp; Navigation</h3>
+            <div class="faq-item-faq">
+              <strong class="faq-question-faq">How do I use the search feature?</strong>
+              <p class="faq-answer-faq">Use the search bar at the top of the page to search for videos, users, or keywords to find relevant content.</p>
+            </div>
+            <div class="faq-item-faq">
+              <strong class="faq-question-faq">How do I interact with videos (like, comment, share)?</strong>
+              <p class="faq-answer-faq">You can like, comment, or share videos by clicking on the respective icons below the video player.</p>
+            </div>
+          </div>
+      
+          <!-- Payment and Account -->
+          <div class="faq-category-faq">
+            <h3 class="faq-category-header-faq">Payment &amp; Account</h3>
+            <div class="faq-item-faq">
+              <strong class="faq-question-faq">How can I add money to my wallet or make a purchase?</strong>
+              <p class="faq-answer-faq">You can add funds by going to your account’s wallet section and choosing your preferred payment method.</p>
+            </div>
+            <div class="faq-item-faq">
+              <strong class="faq-question-faq">How can I withdraw my rewards or points?</strong>
+              <p class="faq-answer-faq">To withdraw, go to the Rewards section and choose the withdrawal option. You can redeem rewards for cash, gift cards, or other benefits.</p>
+            </div>
+          </div>
+      
+          <!-- Support and Reporting Issues -->
+          <div class="faq-category-faq">
+            <h3 class="faq-category-header-faq">Support &amp; Reporting Issues</h3>
+            <div class="faq-item-faq">
+              <strong class="faq-question-faq">I have a technical issue with the platform. What should I do?</strong>
+              <p class="faq-answer-faq">If you face any technical issues, contact our customer support team via the contact form or email us at support@perkview.com.</p>
+            </div>
+            <div class="faq-item-faq">
+              <strong class="faq-question-faq">How do I report inappropriate content?</strong>
+              <p class="faq-answer-faq">Click on the “Report” button next to any content that violates our community guidelines, and it will be reviewed by our team.</p>
+            </div>
+          </div>
+      
+          <!-- Account Deletion or Cancellation -->
+          <div class="faq-category-faq">
+            <h3 class="faq-category-header-faq">Account Deletion or Cancellation</h3>
+            <div class="faq-item-faq">
+              <strong class="faq-question-faq">How can I delete my account?</strong>
+              <p class="faq-answer-faq">To delete your account, go to your account settings, click on “Delete Account,” and follow the instructions.</p>
+            </div>
+            <div class="faq-item-faq">
+              <strong class="faq-question-faq">Can I cancel my subscription?</strong>
+              <p class="faq-answer-faq">Yes, if you have a subscription, you can cancel it in the subscription settings of your account.</p>
+            </div>
+          </div>
+      
+          <!-- Error Handling -->
+          <div class="faq-not-found-faq">
+            <p class="faq-not-found-text-faq">If you can’t find the answer here, feel free to contact us!</p>
+          </div>
+        </section>
+      
+        <!-- Call-to-Action Section -->
+        <div class="cta-section-faq">
+          <p class="cta-message-faq">
+            Can’t find the answer to your question? <a href="contact.html" class="cta-link-faq">Contact us</a> and we’ll be happy to help!
+          </p>
+        </div>
+      
+      </main>
+      
+
+            <!------------- Footer ------------->
+            <footer class="footer">
+                <div class="footer-container">
+                    <!-- Quick Links -->
+                    <div class="footer-column links-column">
+                        <h3>Quick Links</h3>
+                        <ul class="quick-links">
+                            <li><a href="about-us.html">About Us</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="#">FAQs</a></li>
+                            <li><a href="privacy.html">Privacy Policy</a></li>
+                            <li><a href="terms.html">Terms of Service</a></li>
+                        </ul>
+                    </div>
+            
+                    <div class="footer-column newsletter-column">
+                        <h3>Subscribe</h3>
+                        <p>Get updates and exclusive rewards delivered to your inbox.</p>
+                        <form id="subscribe-form" method="POST" action="subscribe.php">
+                            <input type="email" name="email" id="subscribe-email" placeholder="Enter your email" class="newsletter-input" required>
+                            <button type="submit" class="newsletter-button">Subscribe</button>
+                        </form>
+                        <p id="subscribe-message" style="margin-top: 10px; color: green; display: none;"></p>
+                    </div>
+                </div>
+            
+                <div class="footer-divider"></div>
+                <p class="footer-text">&copy; <span id="year"></span> PerkView. All Rights Reserved.</p>
+            </footer>
+            
+
+    <script src="script.js" defer></script>
+    <script>
+           document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>

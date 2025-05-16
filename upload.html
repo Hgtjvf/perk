@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PerkView - Upload Media</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/favicon.png" type="image/png">
+</head>
+
+<body>
+
+    <!----------- Header ----------->
+    <header class="header">
+        <div class="container">
+            <!-- Logo -->
+            <div class="logo">
+                <img src="images/logo.png" alt="Brand Logo" class="logo-image">
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="video.html" class="nav-link">Videos</a>
+                <a href="upload.html" class="nav-link">Upload Video</a>
+            </nav>
+
+
+
+            <!-- User Options -->
+             <script src="session.js"></script>
+            <div class="user-options">
+                <a href="sign-in.html">
+                    <button class="sign-button" id="signInButton">Sign In / Sign Up</button>
+                </a>
+                <div class="logged-in-state" id="loggedInState" style="display: none;">
+                    <!-- Wrap the text in an anchor tag -->
+                    <a href="user.html" class="welcome-link">
+                        <span class="points">Welcome, <span id="username">Username</span></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+<!--------------------- Upload Media ---------------------->
+
+<div class="container-upload">
+    <h1 class="title-upload">Upload Your Media</h1>
+    
+    <!-- Media Upload Section -->
+<form action="upload_video.php" method="POST" id="form-upload" enctype="multipart/form-data">
+        <div class="form-section-upload">
+            <label for="media-upload">Upload Media</label>
+            <input type="file" id="media-upload" name="videoFile" accept=".mp4" required>
+            <p class="info-text-upload">Max file size: 1GB. Supported formats: MP4</p>
+        </div>
+
+        <!-- Media Details -->
+        <div class="form-section-upload">
+            <label for="media-title">Title (Max 100 characters)</label>
+            <input type="text" id="media-title" name="media-title" maxlength="100" required>
+        </div>
+        <div class="form-section-upload">
+            <label for="media-description">Description</label>
+            <textarea id="media-description" name="media-description" rows="4" required></textarea>
+        </div>
+        <div class="form-section-upload">
+            <label for="media-tags">Tags</label>
+            <input type="text" id="media-tags" name="media-tags" placeholder="e.g., Nature, Travel, Funny">
+        </div>
+        <div class="form-section-upload">
+            <label for="media-category">Category</label>
+            <select id="media-category" name="media-category" class="category-dropdown-upload">
+                <option value="education">Education</option>
+                <option value="entertainment">Entertainment</option>
+                <option value="tech">Tech</option>
+                <option value="music">Music</option>
+                <option value="sports">Sports</option>
+                <option value="art">Art</option>
+            </select>
+        </div>
+
+        <!-- Additional Features -->
+        <div class="form-section-upload">
+            <label for="media-caption">Caption</label>
+            <textarea id="media-caption" name="media-caption" rows="2" placeholder="Add a catchy caption..."></textarea>
+        </div>
+        <div class="form-section-upload">
+            <label for="tag-users">User Name</label>
+            <input type="text" id="tag-users" name="tag-users" placeholder="Only the User Name enetered here will be rewarded." required>
+            <small>Only the User Name enetered here will be rewarded.</small>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="submit-upload">Upload Media</button>
+    </form>
+</div>
+
+<section class="upload-progress-upload">
+    <!-- Progress Bar Section -->
+    <div class="progress-bar-container-upload">
+        <p class="uploading-text-upload">Uploading... <span id="upload-percentage-upload">0%</span></p>
+        <div class="progress-bar-upload">
+            <div id="progress-fill-upload" class="progress-fill-upload"></div>
+        </div>
+    </div>
+
+    <!-- Completion Confirmation Modal -->
+    <div id="completion-modal-upload" class="completion-modal-upload">
+        <div class="modal-content-upload">
+            <h3 class="modal-title-upload">Upload Complete!</h3>
+            <p class="modal-message-upload">Your video has been successfully uploaded.</p>
+            <button id="continue-button-upload" class="continue-button-upload">Go to review it.</button>
+        </div>
+    </div>
+</section>
+
+
+    <!------------- Footer ------------->
+
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Quick Links -->
+                    <div class="footer-column links-column">
+                        <h3>Quick Links</h3>
+                        <ul class="quick-links">
+                            <li><a href="about-us.html">About Us</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="faqs.html">FAQs</a></li>
+                            <li><a href="privacy.html">Privacy Policy</a></li>
+                            <li><a href="terms.html">Terms of Service</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column newsletter-column">
+                        <h3>Subscribe</h3>
+                        <p>Get updates and exclusive rewards delivered to your inbox.</p>
+                        <form id="subscribe-form" method="POST" action="subscribe.php">
+                            <input type="email" name="email" id="subscribe-email" placeholder="Enter your email" class="newsletter-input" required>
+                            <button type="submit" class="newsletter-button">Subscribe</button>
+                        </form>
+                        <p id="subscribe-message" style="margin-top: 10px; color: green; display: none;"></p>
+                    </div>
+        </div>
+
+        <div class="footer-divider"></div>
+        <p class="footer-text">&copy; <span id="year"></span> PerkView. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        const customVisibility = document.querySelector('#custom-visibility');
+        document.querySelectorAll('input[name="visibility"]').forEach(radio => {
+            radio.addEventListener('change', () => {
+                customVisibility.style.display = radio.value === 'custom' ? 'block' : 'none';
+            });
+        });
+
+        // JavaScript to clear form fields after successful upload (use with your existing HTML form)
+        document.getElementById("form-upload").reset(); // This clears the form fields
+
+    </script>
+    <script src="script.js" defer></script>
+<script>
+    document.getElementById('media-upload').addEventListener('change', function (event) {
+        const file = event.target.files[0];
+
+        if (file && file.type === 'video/mp4') {
+            const video = document.createElement('video');
+            video.preload = 'metadata';
+
+            video.onloadedmetadata = function () {
+                window.URL.revokeObjectURL(video.src);
+                if (video.duration > 30) {
+                    alert('Please upload a video shorter than 30 seconds.');
+                    event.target.value = ''; // Clear the file input
+                }
+            };
+
+            video.src = URL.createObjectURL(file);
+        }
+    });
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PerkView</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/favicon.png" type="image/png">
+    <style>
+        .error-message-signup {
+            color: red;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+            display: block;
+        }
+
+        .footer-divider {
+            margin: 1rem 0;
+            border-top: 1px solid #ccc;
+        }
+
+        .footer-text {
+            text-align: center;
+            font-size: 0.875rem;
+        }
+    </style>
+</head>
+
+<body>
+    <!----------- Header ----------->
+    <header class="header">
+        <div class="container">
+            <!-- Logo -->
+            <div class="logo">
+                <img src="images/logo.png" alt="Brand Logo" class="logo-image">
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="video.html" class="nav-link">Videos</a>
+                <a href="upload.html" class="nav-link">Upload Video</a>
+            </nav>
+
+            <!-- User Options -->
+            <div class="user-options">
+                <a href="sign-in.html">
+                    <button class="sign-button" id="signInButton">Sign In / Sign Up</button>
+                </a>
+                <div class="logged-in-state" id="loggedInState" style="display: none;">
+                    <a href="user.html" class="welcome-link">
+                        <span class="points">Welcome, <span id="username">Username</span></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sign-Up Form -->
+    <div class="container-signup">
+        <h2 class="title-signup">Sign Up</h2>
+        <!-- Added action and method for non-JS fallback -->
+        <form id="sign-up-form-signup" action="connect.php" method="POST">
+            <div class="form-group-signup">
+                <label for="full-name-signup">Full Name</label>
+                <input type="text" id="full-name-signup" name="full-name-signup" required>
+            </div>
+
+            <div class="form-group-signup">
+                <label for="email-signup">Email Address</label>
+                <input type="email" id="email-signup" name="email-signup" required>
+                <span id="email-error-signup" class="error-message-signup"></span>
+            </div>
+
+            <div class="form-group-signup">
+                <label for="password-signup">Password</label>
+                <input type="password" id="password-signup" name="password-signup" required>
+                <small>Minimum 8 characters, at least one uppercase letter</small>
+            </div>
+
+            <div class="form-group-signup">
+                <label for="confirm-password-signup">Confirm Password</label>
+                <input type="password" id="confirm-password-signup" name="confirm-password-signup" required>
+            </div>
+
+            <div class="form-group-signup">
+                <label for="username-signup">Username</label>
+                <input type="text" id="username-signup" name="username-signup" required>
+                <small>Your unique display name.</small>
+            </div>
+
+            <div class="checkbox-group-signup">
+                <input type="checkbox" id="agree-signup" name="agree-signup" required>
+                <label for="agree-signup">I agree to the Terms of Service and Privacy Policy</label>
+            </div>
+
+            <button type="submit" class="button-signup" id="signup-button">Sign Up</button>
+        </form>
+
+        <div id="error-message-container-signup"></div>
+    </div>
+
+    <!----------- Footer ----------->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column links-column">
+                <h3>Quick Links</h3>
+                <ul class="quick-links">
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="faqs.html">FAQs</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column newsletter-column">
+                <h3>Subscribe</h3>
+                <p>Get updates and exclusive rewards delivered to your inbox.</p>
+                <form id="subscribe-form" method="POST" action="subscribe.php">
+                    <input type="email" name="email" id="subscribe-email" placeholder="Enter your email" class="newsletter-input" required>
+                    <button type="submit" class="newsletter-button">Subscribe</button>
+                </form>
+                <p id="subscribe-message" style="margin-top: 10px; color: green; display: none;"></p>
+            </div>
+        </div>
+
+        <div class="footer-divider"></div>
+        <p class="footer-text">&copy; <span id="year"></span> PerkView. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Moved session.js and custom script to bottom for proper load order -->
+    <script src="session.js"></script>
+    <script>
+document
+  .getElementById("sign-up-form-signup")
+  .addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const formData = new FormData(this);
+    const errorMessageContainer = document.getElementById(
+      "error-message-container-signup"
+    );
+    errorMessageContainer.innerHTML = "";
+
+    fetch("connect.php", {
+      method: "POST",
+      body: formData,
+    })
+      .then((response) => {
+        if (!response.ok) throw new Error("Network error");
+        return response.json();
+      })
+      .then((data) => {
+        if (data.success) {
+          // ← Instead of alert(), redirect:
+          window.location.href = "sign-in.html";
+        } else {
+          Object.entries(data.errors).forEach(([key, message]) => {
+            const errorElement = document.createElement("span");
+            errorElement.classList.add("error-message-signup");
+            errorElement.textContent = message;
+            errorMessageContainer.appendChild(errorElement);
+          });
+        }
+      })
+      .catch((error) => {
+        const generalError = document.createElement("span");
+        generalError.classList.add("error-message-signup");
+        generalError.textContent = `An unexpected error occurred: ${error.message}`;
+        errorMessageContainer.appendChild(generalError);
+      });
+  });
+
+    </script>
+</body>
+
+</html>
